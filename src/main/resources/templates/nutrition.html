@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Programming Fox Club - Nutrition Shop</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" type="text/css" media="all" href="/style.css"/>
+</head>
+<body>
+
+<h3>
+  <span><a th:href="@{'../'}">Information</a></span>
+  <span><a th:href="@{'../nutrition'}">Nutrition Shop</a></span>
+  <span><a th:href="@{'../tricks'}">Trick Center</a></span>
+</h3>
+
+<h1 th:text=" | ${fox.name} got bored of her diet, change it! |">.</h1>
+
+<h3>
+  <img src="hungryfox.png" width="300px"/>
+</h3>
+<table>
+  <form action="/addnutrition">
+    <tr>
+      <th>Food</th>
+      <th>Drink</th>
+    </tr>
+    <tr>
+      <td><input type="list" name="food"/></td>
+      <td><input type="list" name="drink"/></td>
+      <td><input type="submit" value="Change"/></td>
+    </tr>
+  </form>
+</table>
+</body>
+</html>

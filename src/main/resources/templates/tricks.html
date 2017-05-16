@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Welcome to the Trick Center!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" type="text/css" media="all" href="/style.css"/>
+</head>
+<body>
+
+<h3>
+  <span><a th:href="@{'../'}">Information</a></span>
+  <span><a th:href="@{'../nutrition'}">Nutrition Shop</a></span>
+  <span><a th:href="@{'../tricks'}">Trick Center</a></span>
+</h3>
+
+<h1 th:text=" | Teach some new tricks to ${fox.name}!| ">.</h1>
+
+<h3>
+  <img src="foxtrick.png" width="300px"/>
+</h3>
+
+<table>
+  <form action="/addtrick">
+    <tr>
+      <th>Tricks</th>
+    </tr>
+    <tr>
+      <td>
+        <select name="addTrick">
+          <option th:each="trick : ${fox.learnableTricks}"
+                  th:value="${trick}" th:text="${trick}"></option>
+        </select>
+      </td>
+      <td><input type="submit" value="Learn"/></td>
+    </tr>
+  </form>
+</table>
+
+
+<h1 th:text="'Known Tricks'">.</h1>
+
+<ol>
+  <span th:if="${fox.tricks.size()} == 0" th:text="|You know zero tricks.|"></span>
+  <span></span>
+  <li th:each="trick : ${fox.tricks}" th:text="${trick}"></li>
+</ol>
+
+</body>
+</html>

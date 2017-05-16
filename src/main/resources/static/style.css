@@ -1,0 +1,28 @@
+body {
+  font-family: helvetica;
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100%;
+  background: #e6ffe6;
+  text-align: left;
+}
+
+table {
+  position: relative;
+  width: 400px;
+  margin: 10px auto;
+  background: #009900;
+  text-align: center;
+}
+
+image {
+  position: relative;
+  margin: auto 250px;
+  align-self: center;
+}
+
+h1, h3 {
+  text-align: center;
+}
+
